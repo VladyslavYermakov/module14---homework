@@ -1,11 +1,4 @@
 //Завдання 1
-function delayedPromise(value, delay) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve(value);
-        }, delay);
-    });
-}
 const promises = [
     delayedPromise("Проміс 1", 1000),
     delayedPromise("Проміс 2", 2000),
@@ -13,6 +6,13 @@ const promises = [
     delayedPromise("Проміс 4", 2500),
     delayedPromise("Проміс 5", 3000)
 ];
+function delayedPromise(value, delay) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(value);
+        }, delay);
+    });
+}
 Promise.all(promises)
     .then(results => {
         console.log("Результати всіх промісів:");
