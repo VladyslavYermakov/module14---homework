@@ -23,7 +23,13 @@ Promise.all(promises)
     });
 
 //Завдання 2
-//Новий масив мені було ліньки робити, так що використав з 1 завдання :/
+const randomPromises = [
+    randomDelay("Проміс 1"),
+    randomDelay("Проміс 2"),
+    randomDelay("Проміс 3"),
+    randomDelay("Проміс 4"),
+    randomDelay("Проміс 5")
+];
 function randomDelay(value) {
     const delay = Math.floor(Math.random() * 4000) + 1000; 
     return new Promise(resolve => {
@@ -32,7 +38,7 @@ function randomDelay(value) {
         }, delay);
     });
 }
-Promise.race(promises)
+Promise.race(randomPromises)
     .then(result => {
         console.log("Найшвидший проміс:");
         console.log(result);
